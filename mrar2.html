@@ -1,0 +1,1164 @@
+<!doctype html>
+<html lang="en"> 
+ <head> 
+  <meta charset="UTF-8"> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Favicon --> 
+  <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon"> <!-- Font Awesome --> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> <!-- Google Font --> 
+  <link rel="preconnect" href="https://fonts.gstatic.com"> 
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&amp;display=swap" rel="stylesheet"> <!-- AOS --> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"> <!-- Glidejs --> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.4.1/css/glide.core.css"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.4.1/css/glide.theme.css"> <!-- Custom Stylesheet --> 
+  <link rel="stylesheet" href="styles.css"> 
+  <title>MrArikan</title> 
+ <style type="text/css" id="dcoder_stylesheet">:root {
+  --customColor: #0044ff;
+  --purple: #ce00ff;
+  --orange: #ff4600;
+  --blue: #0044ff;
+  --cyan: #03ffc7;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  background-color: #fff;
+  color: #000;
+  position: relative;
+  z-index: 1;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 500;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+li {
+  list-style: none;
+}
+
+.container {
+  max-width: 114rem;
+  margin: 0 auto;
+}
+
+@media only screen and (max-width: 1200px) {
+  .container {
+    padding: 0 3rem;
+  }
+}
+
+/* Header */
+.header {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-color: rgb(0, 0, 19);
+  z-index: 1;
+  overflow: hidden;
+}
+
+.header img {
+  position: absolute;
+  right: -5%;
+  bottom: 0;
+  width: 100rem;
+  z-index: -1;
+}
+
+@media only screen and (max-width: 996px) {
+  .header {
+    min-height: 60vh;
+  }
+
+  .header img {
+    width: 50rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .header img {
+    width: 40rem;
+  }
+}
+
+@media only screen and (max-width: 567px) {
+  .header {
+    min-height: 100vh;
+  }
+
+  .header img {
+    width: 35rem;
+  }
+}
+
+.nav {
+  padding: 1.6rem 0;
+}
+
+.nav.fix-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--customColor);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+}
+
+.nav.fix-nav .logo h1 span {
+  color: #fff;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo h1 {
+  font-size: 3.5rem;
+  color: #fff;
+}
+
+.logo h1 span {
+  font-weight: bold;
+  color: var(--customColor);
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+}
+
+.nav-item:not(:last-child) {
+  margin-right: 0.5rem;
+}
+
+.nav-link:link,
+.nav-link:visited {
+  color: #fff;
+  padding: 0.8rem 1rem;
+  font-size: 1.8rem;
+  transition: all 300ms ease-in-out;
+}
+
+.nav-link:hover {
+  border-radius: 0.3rem;
+  background-color: var(--customColor);
+}
+
+.top-nav,
+.hamburger {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 80%;
+    max-width: 40rem;
+    height: 100%;
+    background-color: #fff;
+    transition: all 300ms ease-in-out;
+    z-index: 100;
+  }
+
+  .menu.show {
+    left: 0;
+  }
+
+  .top-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--customColor);
+    padding: 1rem 1.6rem;
+  }
+
+  .logo h1 span {
+    color: #fff;
+  }
+
+  .top-nav .close {
+    color: #fff;
+    font-size: 2.3rem;
+    padding: 1rem;
+    cursor: pointer;
+  }
+
+  .hamburger {
+    display: block;
+    color: #fff;
+    font-size: 2.3rem;
+    padding: 0.5rem;
+    cursor: pointer;
+  }
+
+  .nav-link:link,
+  .nav-link:visited {
+    display: block;
+    font-size: 1.7rem;
+    color: #222;
+    padding: 1rem 0;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 1.6rem;
+  }
+
+  body.show::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1;
+  }
+
+  .nav.show {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+}
+
+/* Hero */
+.hero {
+  position: absolute;
+  top: 50%;
+  left: 37rem;
+  transform: translateY(-50%);
+  color: #fff;
+}
+
+.hero h3 {
+  font-weight: 400;
+  font-size: 2rem;
+}
+
+.hero h1 {
+  font-size: 9rem;
+}
+
+.hero h4 {
+  font-size: 2rem;
+}
+
+.hero h4 span {
+  color: var(--customColor);
+  text-decoration: underline;
+}
+
+.hero a:link,
+.hero a:visited {
+  display: inline-block;
+  padding: 0.8rem 2.5rem;
+  border: 1px solid var(--customColor);
+  background-color: var(--customColor);
+  color: #fff;
+  margin-top: 2rem;
+  font-size: 1.8rem;
+}
+
+.hero a:hover {
+  background-color: transparent;
+}
+
+@media only screen and (max-width: 1500px) {
+  .hero {
+    left: 10rem;
+  }
+
+  .hero h1 {
+    font-size: 6rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .hero h1 {
+    font-size: 4rem;
+  }
+}
+
+@media only screen and (max-width: 567px) {
+  .hero {
+    top: 35%;
+  }
+
+  .hero h3 {
+    font-size: 1.6rem;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .hero h4 {
+    font-size: 1.6rem;
+  }
+}
+
+.icons {
+  position: absolute;
+  bottom: 5%;
+  left: 37rem;
+  color: #fff;
+}
+
+.icons span:not(:last-child) {
+  margin-right: 1rem;
+}
+
+.icons span {
+  font-size: 2rem;
+  cursor: pointer;
+  transition: all 300ms ease-in-out;
+}
+
+.icons span:hover {
+  color: var(--customColor);
+}
+
+@media only screen and (max-width: 1500px) {
+  .icons {
+    left: 10rem;
+  }
+}
+
+@media only screen and (max-width: 567px) {
+  .icons {
+    display: none;
+  }
+}
+
+/* Color Control */
+.control {
+  position: fixed;
+  right: -4rem;
+  top: 15%;
+  transition: all 300ms ease-in-out;
+  z-index: 1000;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.control.open {
+  right: 0;
+}
+
+.control .widget {
+  position: absolute;
+  left: -2.5rem;
+  border-radius: 1rem 0 0 1rem;
+  cursor: pointer;
+  padding: 0.5rem 0.6rem;
+  background-color: #fff;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.control .widget i {
+  font-size: 2rem;
+  animation: spin 2s linear infinite;
+  color: #000;
+  text-align: center;
+}
+
+.control .colors {
+  background-color: #fff;
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  border-bottom-left-radius: 0.5rem;
+}
+
+.control .colors span {
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  padding: 0.7rem;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.control .colors span:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.control .colors span:nth-child(1) {
+  background-color: var(--blue);
+}
+
+.control .colors span:nth-child(2) {
+  background-color: var(--orange);
+}
+
+.control .colors span:nth-child(3) {
+  background-color: var(--purple);
+}
+
+.control .colors span:nth-child(4) {
+  background-color: var(--cyan);
+}
+
+/* About */
+
+.section {
+  padding: 5rem 0 7rem 0;
+  overflow-x: hidden;
+}
+
+.about {
+  margin-top: 5rem;
+}
+
+.about-center {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 3rem 5rem;
+}
+
+.title {
+  margin: 4rem 0 7rem 0;
+  text-align: center;
+}
+
+.title h1 {
+  font-size: 3rem;
+  display: inline-block;
+  position: relative;
+  z-index: 0;
+}
+
+.title h1::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -20%;
+  transform: translate(-50%, -50%);
+  background-color: var(--customColor);
+  width: 50%;
+  height: 0.4rem;
+  z-index: 1;
+}
+
+.left img {
+  height: 40rem;
+  max-width: 35rem;
+  object-fit: cover;
+}
+
+.right h1 {
+  margin-bottom: 2rem;
+}
+
+.right p {
+  line-height: 2;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.right h1 span {
+  color: var(--customColor);
+}
+
+a.btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background-color: var(--customColor);
+  color: #fff;
+  border: 2px solid var(--customColor);
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  transition: all 300ms ease-in-out;
+}
+
+a.btn:hover {
+  transform: translateY(-3px);
+  background-color: transparent;
+  color: inherit;
+}
+
+a.btn:active {
+  transform: translateY(0);
+}
+
+@media only screen and (max-width: 996px) {
+  .right h1 {
+    font-size: 2rem;
+  }
+
+  .right p {
+    font-size: 1.5rem;
+  }
+
+  a.btn {
+    padding: 0.7rem 1.8rem;
+  }
+
+  .left img {
+    height: 40rem;
+    max-width: 25rem;
+  }
+}
+
+@media only screen and (max-width: 996px) {
+  .about-center {
+    grid-template-columns: 1fr;
+    gap: 3rem 0;
+  }
+
+  .left {
+    text-align: center;
+  }
+
+  .left img {
+    height: 40rem;
+    max-width: 90%;
+  }
+}
+
+/* Services */
+
+.theme {
+  background-color: #000;
+}
+
+.theme .title {
+  color: #fff;
+}
+
+.services-center {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 3rem;
+}
+
+.service {
+  color: #fff;
+  background-color: #111;
+  padding: 2rem;
+  text-align: center;
+  border-radius: 1rem;
+  transition: all 300ms ease-in-out;
+}
+
+.service span {
+  color: var(--customColor);
+  font-size: 4rem;
+  transition: all 300ms ease-in-out;
+}
+
+.service h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.service p {
+  font-size: 1.4rem;
+  color: #f1f1f1;
+}
+
+.service:hover {
+  background-color: var(--customColor);
+  color: #fff;
+}
+
+.service:hover span {
+  color: #fff;
+}
+
+/* Skills */
+.skills-box:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+.skills-box h4 {
+  font-size: 1.8rem;
+  color: #888;
+  font-size: 500;
+}
+
+.skills-box .skills-ilt {
+  width: 100%;
+  position: relative;
+  height: 0.4rem;
+  background-color: #ccc;
+  border-radius: 0.5rem;
+}
+
+.skills-box .skills-bar {
+  background-color: var(--customColor);
+  height: 0.4rem;
+}
+
+.skills-box .html {
+  width: 95%;
+}
+
+.skills-box .css {
+  width: 85%;
+}
+
+.skills-box .javascript {
+  width: 90%;
+}
+
+.skills-box .nodejs {
+  width: 80%;
+}
+
+.skills-box .mongodb {
+  width: 95%;
+}
+
+.skills-box span {
+  position: absolute;
+  bottom: 10%;
+  right: 0;
+  font-size: 1.4rem;
+}
+
+.skills-center {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+}
+
+.right h3 {
+  margin-bottom: 1rem;
+}
+
+.right p {
+  margin-bottom: 2rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .skills-center {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Teams */
+.team {
+  color: #fff;
+  background-color: #111;
+  padding: 3rem;
+  text-align: center;
+  border-radius: 1rem;
+  border-bottom: 4px solid transparent;
+  transition: all 300ms ease-in-out;
+}
+
+.team .img-cover {
+  overflow: hidden;
+  border-radius: 100%;
+  border: 4px solid var(--customColor);
+  height: 13rem;
+  width: 13rem;
+  margin: 0 auto;
+  transition: all 300ms ease-in-out;
+}
+
+.team .img-cover img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.team h3 {
+  font-size: 1.6rem;
+  margin: 1rem 0;
+}
+
+.team p {
+  font-size: 1.5rem;
+  color: #ccc;
+  width: 80%;
+  margin: 0 auto 1rem auto;
+}
+
+.team:hover {
+  border-bottom: 4px solid #fff;
+  background-color: var(--customColor);
+}
+
+.team:hover .img-cover {
+  border-color: #fff;
+}
+
+/* Contact */
+
+.contact-center {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.contact .left h2 {
+  font-size: 2rem;
+}
+
+.contact .left p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.left div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.left div .content {
+  text-align: left;
+}
+
+.left .icon {
+  margin-right: 2rem;
+  font-size: 2.3rem;
+  color: var(--customColor);
+}
+
+.form h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.form input,
+.form textarea {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.6rem;
+  padding: 1rem 0;
+  text-indent: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  outline: none;
+}
+
+.form textarea {
+  width: 100%;
+  resize: vertical;
+  margin-bottom: 3rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .contact-center {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-center .left {
+    text-align: left;
+  }
+
+  .left div .content h3 {
+    font-size: 1.6rem;
+  }
+
+  .left div .content span {
+    font-size: 1.5rem;
+  }
+}
+
+footer {
+  background-color: #000;
+  padding: 1.6rem 1rem;
+  text-align: center;
+}
+
+footer p {
+  color: #fff;
+}
+
+footer p span {
+  color: var(--customColor);
+}</style></head> 
+ <body> <!-- Header --> 
+  <header id="home" class="header"> <!-- Navigation --> 
+   <nav class="nav"> 
+    <div class="navigation container"> 
+     <div class="logo"> 
+      <h1>®<span>Mr</span>Arıkan</h1> 
+     </div> 
+     <div class="menu"> 
+      <div class="top-nav"> 
+       <div class="logo"> 
+        <h1>~ <span>Mr</span>Arıkan</h1> 
+       </div> 
+       <div class="close"> <i class="fas fa-times"></i> 
+       </div> 
+      </div> 
+      <ul class="nav-list"> 
+       <li class="nav-item"> <a href="#home" class="nav-link scroll-link">Giriş </a> </li> 
+       <li class="nav-item"> <a href="#about" class="nav-link scroll-link">Hakkımda</a> </li> 
+       <li class="nav-item"> <a href="#services" class="nav-link scroll-link">Servis </a> </li> 
+       <li class="nav-item"> <a href="#skills" class="nav-link scroll-link">Görünenler </a> </li> 
+       <li class="nav-item"> <a href="#teams" class="nav-link scroll-link">Yorumlar </a> </li> 
+       <li class="nav-item"> <a href="#contact" class="nav-link scroll-link">Ulaşım </a> </li> 
+      </ul> 
+     </div> 
+     <div class="hamburger"> <i class="fas fa-bars"></i> 
+     </div> 
+    </div> 
+   </nav> <!-- Hero --> 
+   <div class="hero"> 
+    <h3>Merhaba, </h3> 
+    <h1>Ben Arıkan </h1> 
+    <h4>Bir Web Tasarlayıcı<span id="type1"></span></h4> <a href="#">Ve Freelance </a> 
+   </div> 
+   <img src="" alt=""> <!-- icons --> 
+   <div class="icons"> <span><i class="fab fa-facebook-f"></i></span> <span><i class="fab fa-instagram"></i></span> <span><i class="fab fa-twitter"></i></span> 
+   </div> <!-- color Control --> 
+   <div class="control"> 
+    <div class="widget"> <i class="fas fa-cog"></i> 
+    </div> 
+    <div class="colors"> <span data-id="#0044ff"></span> <span data-id="#ff4600"></span> <span data-id="#ce00ff"></span> <span data-id="#03ffc7"></span> 
+    </div> 
+   </div> 
+  </header> <!-- Main --> 
+  <section class="section about" id="about"> 
+   <div class="title"> 
+    <h1>Hakkımda</h1> 
+   </div> 
+   <div class="about-center container"> 
+    <div class="left" data-aos="fade-down-right" data-aos-duration="2000"> 
+     <img src="https://imgyukle.com/f/2022/10/17/n67qSQ.jpg" alt=""> 
+    </div> 
+    <div class="right" data-aos="fade-up-left" data-aos-duration="2000"> 
+     <h1>MrArıkan;<span id="type2"></span></h1> 
+     <p> Öncelikle Hoşgeldin Ben Sana Her Türlü Web Site Uygulama Program Yardımları Yapabilirim Uygun Fiyata </p> <a href="" class="btn">İlerle👇</a> 
+    </div> 
+   </div> 
+  </section> <!-- Services --> 
+  <section class="section theme" id="services"> 
+   <div class="title"> 
+    <h1>Benim Alanım</h1> 
+   </div> 
+   <div class="services-center container"> 
+    <div class="service" data-aos="fade-right" data-aos-duration="2000"> <span><i class="fab fa-accusoft"></i></span> 
+     <h2>Web Tasarlayıcı</h2> 
+     <p> Uzun Yıllardır Web Site Yapıyorum Bu İşte Uzmanım </p> 
+    </div> 
+    <div class="service" data-aos="fade-up" data-aos-duration="2000"> <span><i class="fas fa-chart-line"></i></span> 
+     <h2>Kod Yardımı </h2> 
+     <p> Anlamadığınız Yerlerde Ve Hatalarınızda Yardım Edebilirim</p> 
+    </div> 
+    <div class="service" data-aos="fade-left" data-aos-duration="2000"> <span><i class="fas fa-blender-phone"></i></span> 
+     <h2>Uygulama Geliştirici </h2> 
+     <p> Her Çeşit Uygulama Geliştiriyorum Sizler İçin Sade Ve Öz Uygulamalar Yapabilirim </p> 
+    </div> 
+   </div> 
+  </section> <!-- Skills --> 
+  <section class="section skills" id="skills"> 
+   <div class="title"> 
+    <h1>Ben Hangi Programlama Dilleriyle Uğraşıyorum? </h1> 
+   </div> 
+   <div class="skills-center container"> 
+    <div class="skills-left" data-aos="fade-down-right" data-aos-duration="2000"> 
+     <div class="skills-box"> 
+      <h4>HTML</h4> 
+      <div class="skills-ilt"> 
+       <div class="skills-bar html"></div> <span>95%</span> 
+      </div> 
+     </div> 
+     <div class="skills-box"> 
+      <h4>CSS</h4> 
+      <div class="skills-ilt"> 
+       <div class="skills-bar css"></div> <span>85%</span> 
+      </div> 
+     </div> 
+     <div class="skills-box"> 
+      <h4>JAVASCRIPT</h4> 
+      <div class="skills-ilt"> 
+       <div class="skills-bar javascript"></div> <span>90%</span> 
+      </div> 
+     </div> 
+     <div class="skills-box"> 
+      <h4>NODEJS</h4> 
+      <div class="skills-ilt"> 
+       <div class="skills-bar nodejs"></div> <span>40%</span> 
+      </div> 
+     </div> 
+     <div class="skills-box"> 
+      <h4>Freelance MrArikan</h4> 
+      <div class="skills-ilt"> 
+       <div class="skills-bar mongodb"></div> <span></span> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="right" data-aos="fade-up-left" data-aos-duration="2000"> 
+     <h3>Neden Ben¿</h3> 
+     <p> İşleriniz Veya Gündelik Hayatınız İçin Her Zaman Ucuz Ve Güvenilir Bir Freelance Bulunması Kolay Değil! </p> <a href="#" class="btn">Okunacak Yazı</a> 
+    </div> 
+   </div> 
+  </section> <!-- Teams --> 
+  <section class="theme section" id="teams"> 
+   <div class="title"> 
+    <h1>Yorumlar </h1> 
+   </div> 
+   <div class="teams-center container"> 
+    <div class="glide"> 
+     <div class="glide__track" data-glide-el="track"> 
+      <ul class="glide__slides"> 
+       <li class="glide__slide"> 
+        <div class="team"> 
+         <div class="img-cover"> 
+          <img src="https://imgyukle.com/f/2022/10/17/n60iNP.jpg" alt=""> 
+         </div> 
+         <h3>Gizli Kullanıcı </h3> 
+         <p> "Geçen Yaptığım Uygulama İçin Kod Yardımı Aldım Verdiği Kodlar Tamamen Çalışıyordu Teşekkürler 🌟" </p> 
+        </div> </li> 
+       <li class="glide__slide"> 
+        <div class="team"> 
+         <div class="img-cover"> 
+          <img src="https://imgyukle.com/f/2022/10/17/n60iNP.jpg" alt=""> 
+         </div> 
+         <h3>Gizli Kullanıcı </h3> 
+         <p> "Bana Ait Web Site Yaptırdım Şahane"🌟</p> 
+        </div> </li> 
+       <li class="glide__slide"> 
+        <div class="team"> 
+         <div class="img-cover"> 
+          <img src="https://imgyukle.com/f/2022/10/17/n60iNP.jpg" alt=""> 
+         </div> 
+         <h3>Gizli Kullanıcı </h3> 
+         <p> "Bana Çok Yardım Etti Web Konusunda Çok Teşekkürler🌟"</p> 
+        </div> </li> 
+       <li class="glide__slide"> 
+        <div class="team"> 
+         <div class="img-cover"> 
+          <img src="https://imgyukle.com/f/2022/10/17/n60iNP.jpg" alt=""> 
+         </div> 
+         <h3>Gizli Kullanıcı </h3> 
+         <p> "Çok Yardımı Dokundu Teşekkürler🌟" </p> 
+        </div> </li> 
+       <li class="glide__slide"> 
+        <div class="team"> 
+         <div class="img-cover"> 
+          <img src="https://imgyukle.com/f/2022/10/17/n60iNP.jpg" alt=""> 
+         </div> 
+         <h3>Gizli Kullanıcı</h3> 
+         <p> "Bi Ara Hesap Makinesi Yaptırdım Sıkıntı Fln Çıkmadı Tam İstediğim Gibi Ucuza Yaptı Bide Teşekkürler"</p> 
+        </div> </li> 
+       <li class="glide__slide"> 
+        <div class="team"> 
+         <div class="img-cover"> 
+          <img src="https://imgyukle.com/f/2022/10/17/n60iNP.jpg" alt=""> 
+         </div> 
+         <h3>Gizli Kullanıcı </h3> 
+         <p> "Ucuz Ve Güvenilir Tek Yer Nokta🌟"</p> 
+        </div> </li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+  </section> <!-- Contact --> 
+  <section class="section contact" id="contact"> 
+   <div class="title"> 
+    <h1>Benim Hakkımda </h1> 
+   </div> 
+   <div class="contact-center container"> 
+    <div class="left" data-aos="fade-down-right" data-aos-duration="2000"> 
+     <h2>Bilinmesi Gereken</h2> 
+     <p> Merhaba Ben Freelance Arıkan Sizlere HARİKA İşleriniz İçin Yardımcı Olabilirim Çok Uygun Fiyata Yıllardır Bu Sektördeyim Sizin İçin Web Site Uygulama Kodları Yardımcı Kodları Verebilirim Discord Üzerinden Bana Ulaşabilirsiniz MrArıkan#2457 </p> 
+     <div> <span class="icon"><i class="fas fa-user"></i></span> <span class="content"> <h3>Mr</h3> <span>Arıkan</span> </span> 
+     </div> 
+     <div> <span class="icon"><i class="fas fa-envelope"></i></span> <span class="content"> <h3>Email</h3> <span>mrarikan</span> </span> 
+     </div> 
+     <div> <span class="icon"><i class="fas fa-map-marker-alt"></i></span> <span class="content"> <h3>Address</h3> <span>Turkey</span> </span> 
+     </div> 
+    </div> 
+    
+    </div> 
+    
+  </section> <!-- Footer --> 
+  <footer> 
+   <p>By Arıkan <span>Tr</span> | © 2023 Orginal .</p> 
+  </footer> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.4.1/glide.min.js"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/typeit/7.0.4/typeit.min.js"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script> 
+  <script src="index.js"></script> 
+ 
+<script type="text/javascript" id="dcoder_script">const glide = document.querySelector('.glide');
+
+if(glide)
+new Glide(glide, {
+  type: "carousel",
+  startAt: 0,
+  perView: 3,
+  gap: 30,
+  hoverpause: true,
+  autoplay: 2000,
+  animationDuration: 800,
+  animationTimingFunc: 'linear',
+  breakpoints: {
+    996: {
+      perView: 2
+    },
+    768: {
+      perView: 1
+    },
+  }
+}).mount()
+
+const menu = document.querySelector('.menu');
+const navOpen = document.querySelector('.hamburger');
+const navClose = document.querySelector('.close');
+
+
+const navLeft = menu.getBoundingClientRect().left;
+navOpen.addEventListener('click', ()=>{
+  if(navLeft < 0){
+    menu.classList.add('show');
+    document.body.classList.add('show');
+    navBar.classList.add('show')
+  }
+})
+
+navClose.addEventListener('click', ()=>{
+   if(navLeft < 0){
+    menu.classList.remove('show');
+    document.body.classList.remove('show');
+    navBar.classList.remove('show')
+  }
+})
+
+// Fix nav
+
+const navBar = document.querySelector('.nav');
+const navHeight = navBar.getBoundingClientRect().height;
+const control = document.querySelector('.control');
+
+
+window.addEventListener('scroll', ()=>{
+  const scrollHeight = window.pageYOffset;
+  if(scrollHeight > navHeight){
+    navBar.classList.add('fix-nav')
+  }else{
+        navBar.classList.remove('fix-nav')
+  }
+
+  control.classList.remove('open')
+})
+
+
+// Colors 
+
+const widget = document.querySelector('.widget');
+
+widget.addEventListener('click', ()=>{
+  control.classList.toggle('open')
+})
+
+const colors = [...document.querySelectorAll('.colors span')];
+document.querySelector(':root').style.setProperty('--customColor','#0044ff')
+
+
+colors.forEach(color=>{
+  color.addEventListener('click', ()=>{
+    const currentColor = color.dataset.id;
+    document.querySelector(':root').style.setProperty('--customColor',currentColor)
+
+  })
+})
+
+
+// Scroll to link
+
+const links = [...document.querySelectorAll('.scroll-link')]
+links.map(link=>{
+  link.addEventListener('click',e=>{
+    e.preventDefault();
+
+    const id = e.target.getAttribute('href').slice(1);
+    const el = document.getElementById(id);
+    const fixNav = navBar.classList.contains('fix-nav')
+    let position = el.offsetTop - navHeight;
+
+    window.scrollTo({
+      top: position,
+      left: 0
+    })
+  })
+})
+
+// Typeit
+
+new TypeIt('#type1', {
+  speed: 120,
+  loop: true,
+  waitUntilVisible: true
+}).type('Designer',{delay: 400})
+.pause(500)
+.delete(9)
+.type("Developer",{delay: 400})
+.pause(500)
+.delete(9).go()
+
+new TypeIt('#type2', {
+  speed: 120,
+  loop: true,
+  waitUntilVisible: true
+}).type('Designer',{delay: 400})
+.pause(500)
+.delete(9)
+.type("Developer",{delay: 400})
+.pause(500)
+.delete(9).go()
+
+gsap.from('.logo', {opacity: 0, duration: 1, delay: .5, y: -10})
+gsap.from('.hamburger', {opacity: 0, duration: 1, delay: 1, x: 20})
+gsap.from('.banner', {opacity: 0, duration: 1, delay: 1.5, x: -200})
+gsap.from('.hero h3', {opacity: 0, duration: 1, delay: 2, y: -50})
+gsap.from('.hero h1', {opacity: 0, duration: 1, delay:2.5, y: -45})
+gsap.from('.hero h4', {opacity: 0, duration: 1, delay: 3, y: -30})
+gsap.from('.hero a', {opacity: 0, duration: 1, delay: 3.5, y: 50})
+gsap.from('.nav-item', {opacity: 0, duration: 1, delay: 3, x: -30,stagger: .2})
+gsap.from('.icons span', {opacity: 0, duration: 1, delay: 3, x: -30,stagger: .2})
+
+AOS.init()</script></body></html>
